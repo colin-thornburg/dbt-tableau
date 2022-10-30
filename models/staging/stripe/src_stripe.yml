@@ -6,6 +6,9 @@ sources:
     schema: stripe
     tables:
       - name: payment
+        loaded_at_field: _batched_at
+        freshness:
+          warn_after: {count: 10000, period: day}
         columns:
           - name: id
           - name: order_id
