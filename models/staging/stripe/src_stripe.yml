@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: raw_demo
+    schema: stripe
+    tables:
+      - name: payment
+        columns:
+          - name: id
+          - name: order_id
+          - name: payment_method
+          - name: state
+          - name: amount
+          - name: created
+          - name: _batched_at
