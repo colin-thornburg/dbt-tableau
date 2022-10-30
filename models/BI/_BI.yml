@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: order_analytics
+    description: ""
+    columns:
+      - name: order_id
+        description: ""
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: ""
+
+      - name: first_name
+        description: ""
+
+      - name: last_name
+        description: ""
+
+      - name: order_date
+        description: ""
+
+      - name: state
+        description: ""
+
+      - name: payment_id
+        description: ""
+
+      - name: payment_method
+        description: ""
+
+      - name: amount
+        description: ""
+
+      - name: created_at
+        description: ""
+
+      - name: first_order_date
+        description: ""
+
+      - name: most_recent_order_date
+        description: ""
