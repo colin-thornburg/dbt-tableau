@@ -11,9 +11,6 @@ exposures:
 
     depends_on:
       - ref('order_analytics')
-      - source('jaffle_shop', 'orders')
-      - source('jaffle_shop', 'customers')
-      - source('stripe', 'payment')
 
     owner:
       name: Danny the Data Engineer
