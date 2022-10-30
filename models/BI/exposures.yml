@@ -1,0 +1,20 @@
+version: 2
+
+exposures:
+
+  - name: order_analytics
+    type: dashboard
+    maturity: high
+    url: https://bi.tool/dashboards/1
+    description: >
+      Track daily orders and perform return analysis"?
+
+    depends_on:
+      - ref('order_analytics')
+      - source('jaffle_shop', 'orders')
+      - source('jaffle_shop', 'customers')
+      - source('stripe', 'payment')
+
+    owner:
+      name: Danny the Data Engineer
+      email: data@jaffleshop.com
