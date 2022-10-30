@@ -2,12 +2,30 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    database: raw
-    schema: jaffleshop
+    database: raw_demo
+    schema: jaffle_shop
     tables:
       - name: customers
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: first_name
+          - name: last_name
+
       - name: orders
         loaded_at_field: _etl_loaded_at
         freshness:
           warn_after: {count: 12, period: hour}
           error_after: {count: 24, period: hour}
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: user_id
+          - name: order_date
+          - name: state
+          - name: _etl_loaded_at
+
