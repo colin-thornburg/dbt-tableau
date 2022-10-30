@@ -33,12 +33,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 # dbt_project.yml
 models:
-  staging:
-    +materialized: view
-  intermediate:
-    +materialized: ephemeral
-  marts:
-    +materialized: table
-  BI:
-    +materialized: table
+  jaffle_shop:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: ephemeral
+    marts:
+      +materialized: table
+    BI:
+      +materialized: table
 
