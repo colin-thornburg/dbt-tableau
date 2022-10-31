@@ -1,0 +1,63 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Tableau that contains transactional data on all orders placed at Jaffle Shop"
+    columns:
+      - name: order_id
+        description: "The unique order identifier"
+        tests:
+          - not_null
+
+      - name: customer_id
+        description: "The unique customer identifier"
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "The date the order was placed"
+
+      - name: state
+        description: "The current status of the order"
+        tests:
+          - accepted_values:
+              values: ['returned', 'completed', 'return_pending', 'shipped', 'placed']
+
+      - name: payment_id
+        description: "The unique payment identifier"
+
+      - name: payment_method
+        description: "The type of payment the customer used to make the purchase"
+
+      - name: amount
+        description: "Amount in USD"
+
+      - name: created_at
+        description: "The date in which the transaction was initiated by the customer"
+
+      - name: discount_percent
+        description: "The discount % when payment_method = 'coupon'"
+
+  - name: dim_customers
+    description: "Table that contains the primary attributes associated with a customer"
+    columns:
+      - name: customer_id
+        description: ""
+        tests:
+          - not_null
+          - unique
+
+      - name: first_name
+        description: "The first name of the customer"
+
+      - name: last_name
+        description: "The last name initial of the customer"
+
+      - name: first_order_date
+        description: "The first date an order was placed"
+
+      - name: most_recent_order_date
+        description: "The most recent customer order date"
+
+      - name: number_of_orders
+        description: "A distinct count of customer orders"
