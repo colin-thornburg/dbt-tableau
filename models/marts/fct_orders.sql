@@ -12,7 +12,8 @@ select
     payments.payment_id,
     payments.payment_method,
     payments.amount,
-    payments.created_at
+    payments.created_at,
+    payments.discount_percent
 
 
 from orders
