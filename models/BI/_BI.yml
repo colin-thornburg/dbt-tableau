@@ -41,3 +41,24 @@ models:
 
       - name: most_recent_order_date
         description: ""
+
+metrics:
+  - name: revenue
+    label: Revenue
+    model: ref('order_analytics')
+    description: "The total revenue of our jaffle business"
+
+    type: sum
+    sql: amount
+
+    timestamp: order_date
+    time_grains: [day, week, month, year]
+
+    dimensions:
+      - payment_method
+      - customer_id
+
+    filters:
+      - field: state
+        operator: '='
+        value: "'completed'"
