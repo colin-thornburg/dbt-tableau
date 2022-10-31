@@ -5,42 +5,42 @@ models:
     description: ""
     columns:
       - name: order_id
-        description: ""
+        description: "The unique order identifier"
         tests:
           - not_null
 
       - name: customer_id
-        description: ""
+        description: "The unique customer identifier"
 
       - name: first_name
-        description: ""
+        description: "The first name of the customer"
 
       - name: last_name
-        description: ""
+        description: "The last name initial of the customer"
 
       - name: order_date
-        description: ""
+        description: "The first date an order was placed"
 
       - name: state
-        description: ""
+        description: "The current status of the order"
 
       - name: payment_id
-        description: ""
+        description: "The unique payment identifier"
 
       - name: payment_method
-        description: ""
+        description: "The type of payment the customer used to make the purchase"
 
       - name: amount
-        description: ""
+        description: "Amount in USD"
 
       - name: created_at
-        description: ""
+        description: "The date in which the transaction was initiated by the customer"
 
       - name: first_order_date
-        description: ""
+        description: "The first date an order was placed"
 
       - name: most_recent_order_date
-        description: ""
+        description: "The most recent customer order date"
 
 metrics:
   - name: revenue
