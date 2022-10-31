@@ -2,16 +2,17 @@ version: 2
 
 models:
   - name: fct_orders
-    description: ""
+    description: "Tableau that contains transactional data on all orders placed at Jaffle Shop"
     columns:
       - name: order_id
         description: "The unique order identifier"
         tests:
-          - unique
           - not_null
 
       - name: customer_id
         description: "The unique customer identifier"
+        tests:
+          - not_null
 
       - name: order_date
         description: "The date the order was placed"
@@ -26,34 +27,37 @@ models:
         description: "The unique payment identifier"
 
       - name: payment_method
-        description: ""
+        description: "The type of payment the customer used to make the purchase"
 
       - name: amount
-        description: ""
+        description: "Amount in USD"
 
       - name: created_at
-        description: ""
+        description: "The date in which the transaction was initiated by the customer"
 
       - name: discount_percent
-        description: "If an order has an associated coupon from the payment method, this is the actual discount applied"
+        description: "The discount % when payment_method = 'coupon'"
 
   - name: dim_customers
-    description: ""
+    description: "Table that contains the primary attributes associated with a customer"
     columns:
       - name: customer_id
         description: ""
+        tests:
+          - not_null
+          - unique
 
       - name: first_name
-        description: ""
+        description: "The first name of the customer"
 
       - name: last_name
-        description: ""
+        description: "The last name initial of the customer"
 
       - name: first_order_date
-        description: ""
+        description: "The first date an order was placed"
 
       - name: most_recent_order_date
-        description: ""
+        description: "The most recent customer order date"
 
       - name: number_of_orders
-        description: ""
+        description: "A distinct count of customer orders"
