@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: ""
+    columns:
+      - name: order_id
+        description: "The unique order identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "The unique customer identifier"
+
+      - name: order_date
+        description: "The date the order was placed"
+
+      - name: state
+        description: "The current status of the order"
+        tests:
+          - accepted_values:
+              values: ['returned', 'completed', 'return_pending', 'shipped', 'placed']
+
+      - name: payment_id
+        description: "The unique payment identifier"
+
+      - name: payment_method
+        description: ""
+
+      - name: amount
+        description: ""
+
+      - name: created_at
+        description: ""
+
+      - name: discount_percent
+        description: "If an order has an associated coupon from the payment method, this is the actual discount applied"
+
+  - name: dim_customers
+    description: ""
+    columns:
+      - name: customer_id
+        description: ""
+
+      - name: first_name
+        description: ""
+
+      - name: last_name
+        description: ""
+
+      - name: first_order_date
+        description: ""
+
+      - name: most_recent_order_date
+        description: ""
+
+      - name: number_of_orders
+        description: ""
