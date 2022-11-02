@@ -16,7 +16,7 @@ select
     orders.amount,
     orders.created_at,
     customers.first_order_date,
-    customers.most_recent_order_date
+    customers.most_recent_order_date as recent_dt
 
 
 from orders
