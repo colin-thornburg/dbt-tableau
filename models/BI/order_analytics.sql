@@ -1,3 +1,4 @@
+
 with
     customers as (select * from {{ ref("dim_customers") }}),
 
