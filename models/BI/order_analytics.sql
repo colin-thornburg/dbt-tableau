@@ -19,6 +19,5 @@ select
     customers.most_recent_order_date,
     orders.discount_percent
 
-
 from orders
 left join customers using (customer_id)
