@@ -12,7 +12,7 @@
         {% elif 'ci' in target.name.lower() -%}
             {{target.schema}}{{ 'test_pr_schema'}}
         {% else %}
-            {{custom_schema_name}}
+            {{default_schema}}
         {% endif %}
     {%- else -%} 
         {{ log("Last Else: ") }}
