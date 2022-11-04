@@ -14,14 +14,13 @@ select
     customers.first_name,
     customers.last_name,
     orders.order_date,
-    orders.state,
+    orders.state as state,
     orders.payment_id,
     orders.payment_method,
     {{ format_dollars('amount') }} as amount,
     orders.created_at,
     customers.first_order_date,
-    customers.most_recent_order_date,
-    orders.discount_percent
+    customers.most_recent_order_date
 
 from orders
 left join customers using (customer_id)
