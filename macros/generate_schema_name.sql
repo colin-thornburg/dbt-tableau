@@ -3,6 +3,7 @@
     
     {% set log_msg='getting custom schema:\ntarget_name:' ~ target.name ~ '\ncustom_schema_name:' ~ custom_schema_name %}
     {% do log(log_msg, True) %}
+    {{ log(target.name)}}
 
     {%- if custom_schema_name -%}
         {% if 'default' == target.name %}
@@ -11,7 +12,7 @@
         {% elif 'ci' in target.name.lower() -%}
             {{target.schema}}{{ 'test_pr_schema'}}
         {% else %}
-            {{custom_schema_name}}
+            {{default_schema}}
         {% endif %}
     {%- else -%} 
         {{ log("Last Else: ") }}
