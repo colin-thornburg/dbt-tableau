@@ -11,7 +11,7 @@ select
     orders.state,
     payments.payment_id,
     payments.payment_method,
-    {{ cents_to_dollars('amount') }} as amount,
+    payments.amount,
     payments.created_at,
     payments.discount_percent
 
