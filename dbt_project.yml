@@ -43,3 +43,4 @@ models:
     BI:
       +materialized: table
 
+
