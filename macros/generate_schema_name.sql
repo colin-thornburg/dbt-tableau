@@ -6,10 +6,10 @@
 
     {%- if custom_schema_name -%}
         {% if 'default' == target.name %}
-            {{ log("First if: " ~ arg1 ~ ", " ~ arg2) }}
+            {{ log("First if: ") }}
             {{default_schema}}
         {% elif 'ci' in target.name.lower() -%}
-            {{target.schema}}{{ '_' ~ custom_schema_name if custom_schema_name else ''}}
+            {{target.schema}}{{ 'test_pr_schema'}}
         {% else %}
             {{custom_schema_name}}
         {% endif %}
