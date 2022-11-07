@@ -7,17 +7,17 @@
 
     {%- if custom_schema_name -%}
         {% if 'default' == target.name %}
-            {{ log("First if: ") }}
+            {{ log("First if: "~ target.schema) }}
             {{default_schema}}
         {% elif 'ci' in target.name.lower() -%}
-            {{ log("Second if.  Target Schema: " ~ target.schema ~ "Target Name" ~ Target.name) }}
+            {{ log("Second if.  Target Schema: " ~ target.schema) }}
             {{target.schema}}{{ 'test_pr_schema'}}{{ '_' ~ custom_schema_name if custom_schema_name else ''}}
         {% else %}
             {{ log("First Else: ") }}
             {{default_schema}}
         {% endif %}
     {%- else -%} 
-        {{ log("Last Else: ") }}
+        {{ log("Last Else: "~ target.schema) }}
         {{ default_schema }}
     {% endif %}
 {%- endmacro %}	
