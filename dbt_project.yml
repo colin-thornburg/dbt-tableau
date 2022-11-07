@@ -38,8 +38,8 @@ models:
   jaffle_shop:
     staging:
       +materialized: view
-    intermediate:
-      +materialized: ephemeral
+    # intermediate:
+    #   +materialized: ephemeral
     marts:
       +materialized: table
     BI:
