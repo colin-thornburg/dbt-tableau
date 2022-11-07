@@ -10,8 +10,10 @@
             {{ log("First if: ") }}
             {{default_schema}}
         {% elif 'ci' in target.name.lower() -%}
-            {{target.schema}}{{ 'test_pr_schema'}}
+            {{ log("Second if.  Target Schema: " ~ target.schema ~ "Target Name" ~ Target.name) }}
+            {{target.schema}}{{ 'test_pr_schema'}}{{ '_' ~ custom_schema_name if custom_schema_name else ''}}
         {% else %}
+            {{ log("First Else: ") }}
             {{default_schema}}
         {% endif %}
     {%- else -%} 
