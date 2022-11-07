@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: info_schema
+    database: colint_demo_tableau
+    schema: information_schema
+    tables:
+      - name: tables
