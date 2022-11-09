@@ -38,14 +38,14 @@ models:
   jaffle_shop:
     staging:
       +materialized: view
-    intermediate:
-      +materialized: ephemeral
+    # intermediate:
+    #   +materialized: ephemeral
     marts:
       +materialized: table
     BI:
       +materialized: table
-    dbt_artifacts:
-      +database: COLINT_DEMO_TABLEAU # optional, default is your target database
-      +schema: dbt_artifacts # optional, default is your target schema
+    # dbt_artifacts:
+    #   +database: COLINT_DEMO_TABLEAU # optional, default is your target database
+    #   +schema: dbt_artifacts # optional, default is your target schema
 
 
