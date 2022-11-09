@@ -23,7 +23,7 @@ select
     orders.created_at,
     customers.first_order_date,
     customers.most_recent_order_date,
-    orders.discount_percent
+    orders.discount_percent as dis_per
 
 from orders
 left join customers using (customer_id)
