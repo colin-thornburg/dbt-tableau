@@ -18,7 +18,7 @@ select
     orders.payment_id,
     orders.payment_method,
     {{ format_dollars('amount') }} as amount,
-    orders.created_at as created_att,
+    orders.created_at,
     customers.first_order_date,
     customers.most_recent_order_date
 
