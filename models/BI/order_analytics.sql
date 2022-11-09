@@ -20,8 +20,7 @@ select
     {{ format_dollars('amount') }} as amount,
     orders.created_at,
     customers.first_order_date,
-    customers.most_recent_order_date,
-    orders.discount_percent as dis_perc
+    customers.most_recent_order_date
 
 from orders
 left join customers using (customer_id)
