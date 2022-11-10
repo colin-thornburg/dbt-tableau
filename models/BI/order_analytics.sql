@@ -6,8 +6,6 @@
 with
     customers as (select * from {{ ref("dim_customers") }}),
 
-    random_parent as (select * from {{ ref("random_parent_model") }}),
-
     orders as (select * from {{ ref("fct_orders") }})
 
 select
