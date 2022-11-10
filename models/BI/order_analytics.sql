@@ -1,8 +1,3 @@
-
-{{ config(
-    schema='Revenue'
-) }}
-
 with
     customers as (select * from {{ ref("dim_customers") }}),
 
@@ -23,5 +18,3 @@ select
     customers.most_recent_order_date
 from orders
 left join customers using (customer_id)
-
---left join random_parent using (order_id)
