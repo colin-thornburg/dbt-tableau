@@ -1,0 +1,1 @@
+Select * from {{ ref('stg_pmts') }} where state = 'success'
