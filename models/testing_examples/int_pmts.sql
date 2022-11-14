@@ -1,1 +1,1 @@
-Select * from {{ ref('stg_pmts') }} where state = 'success'
+Select * from {{ ref('stg_pmts') }} where state = 'return'
