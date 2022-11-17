@@ -7,7 +7,6 @@ select
     orders.order_id,
     orders.customer_id,
     customers.first_name,
-    orders.discount_percent,
     customers.last_name,
     orders.order_date,
     orders.state as state,
