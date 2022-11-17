@@ -1,0 +1,1 @@
+Select id, Payment_method, state, amount from {{ source('stripe', 'payment') }}
